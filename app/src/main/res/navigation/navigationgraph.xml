@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationgraph"
+    app:startDestination="@id/startFragment">
+
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.app.nasaapp.ui.NasaImageListFragment"
+        android:label="@string/nase_image_list"
+        tools:layout="@layout/fragment_nasa_image_list" />
+</navigation>
