@@ -3,12 +3,9 @@ package com.app.nasaapp.network
 import android.content.Context
 import android.util.Log
 import com.app.nasaapp.R
-import com.app.nasaapp.model.PicturesModel
-import com.application.myapplication.network.RetrofitInstance
+import com.app.nasaapp.model.PictureModel
 import com.google.gson.Gson
-import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken
-import kotlinx.coroutines.launch
 import java.io.*
 import java.lang.reflect.Type
 
@@ -16,7 +13,7 @@ class AppRepository {
 
     val TAG = AppRepository::class.java.simpleName
 
-    fun fetchImages(context :Context): List<PicturesModel> {
+    fun fetchImages(context :Context): List<PictureModel> {
 
         val ip: InputStream = context.resources.openRawResource(R.raw.data)
         val writer: Writer = StringWriter()
@@ -39,8 +36,8 @@ class AppRepository {
         val jsonString: String = writer.toString()
         Log.d(TAG, "JSON $jsonString")
         val gson = Gson()
-        val listType: Type = object : TypeToken<List<PicturesModel?>?>() {}.type
-        return gson.fromJson(jsonString, listType) as List<PicturesModel>
+        val listType: Type = object : TypeToken<List<PictureModel?>?>() {}.type
+        return gson.fromJson(jsonString, listType) as List<PictureModel>
 
 
     }

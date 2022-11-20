@@ -6,10 +6,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.app.nasaapp.base.BaseViewModel
-import com.app.nasaapp.model.PicturesModel
+import com.app.nasaapp.model.PictureModel
 import com.app.nasaapp.network.AppRepository
 import com.app.nasaapp.roomDb.NasaAppDb
 import com.app.nasaapp.utils.Resources
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.io.IOException
 
@@ -18,32 +19,19 @@ class PictureViewModel(override val app: Application) :
     BaseViewModel(app) {
 
     val images = MutableLiveData<Resources<Bitmap>>()
-    var placeHolders = MutableLiveData<List<PicturesModel>>()
-
-    var pictureList = MutableLiveData<List<PicturesModel>>()
 
     private val userRepository = AppRepository();
 
     var db: NasaAppDb = NasaAppDb.invoke(app.applicationContext)
 
-    init {
-        .observe(this) {
-            if (it.isNullOrEmpty()) {
-                getImages()
-            } else {
-                pictureList.postValue(it)
 
-            }
-        }
-    }
-
-    fun getAllPictures(): LiveData<List<PicturesModel>> {
+    fun getAllPictures(): LiveData<List<PictureModel>> {
 
         return db.picturesDao().getAllPictures()
     }
 
     fun getImages(){
-        viewModelScope.launch {
+        viewModelScope.launch (Dispatchers.IO){
             _getImageFromRaw()
         }
     }

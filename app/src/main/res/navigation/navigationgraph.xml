@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.app.nasaapp.ui.NasaImageListFragment"
+        android:name="com.app.nasaapp.ui.GridImageListFragment"
         android:label="@string/nase_image_list"
-        tools:layout="@layout/fragment_nasa_image_list" />
+        tools:layout="@layout/fragment_grid_image_list" />
 </navigation>

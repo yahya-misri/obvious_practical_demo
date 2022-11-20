@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 @Entity(tableName = "pictures")
-data class PicturesModel(
+data class PictureModel(
     @PrimaryKey(autoGenerate = true) var id:Int,
     @SerializedName("copyright") var copyright: String? = null,
     @SerializedName("date") var date: String? = null,
@@ -16,5 +16,4 @@ data class PicturesModel(
     @SerializedName("service_version") var serviceVersion: String? = null,
     @SerializedName("title") var title: String? = null,
     @SerializedName("url") var url: String? = null,
-    @SerializedName("isBookmark") var bookmark:Boolean =false
 ):Serializable

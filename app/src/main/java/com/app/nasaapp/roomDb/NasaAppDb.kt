@@ -4,11 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.app.nasaapp.model.PicturesModel
+import com.app.nasaapp.model.PictureModel
 
 
 @Database(
-    entities = [PicturesModel::class],
+    entities = [PictureModel::class],
     version = 1,
     exportSchema = true
 )
