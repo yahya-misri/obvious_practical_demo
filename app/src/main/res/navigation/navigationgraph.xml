@@ -10,5 +10,25 @@
         android:id="@+id/startFragment"
         android:name="com.app.nasaapp.ui.GridImageListFragment"
         android:label="@string/nase_image_list"
-        tools:layout="@layout/fragment_grid_image_list" />
+        tools:layout="@layout/fragment_grid_image_list" >
+        <action
+            android:id="@+id/action_startFragment_to_picturePagerFragment"
+            app:destination="@id/picturePagerFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_pictureDetailFragment"
+            app:destination="@id/pictureDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/picturePagerFragment"
+        android:name="com.app.nasaapp.ui.PicturePagerFragment"
+        android:label="picturePagerFragment"
+        tools:layout="@layout/picture_pager_fragment">
+        <action
+            android:id="@+id/action_picturePagerFragment_to_pictureDetailFragment"
+            app:destination="@id/pictureDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pictureDetailFragment"
+        android:name="com.app.nasaapp.ui.PictureDetailFragment"
+        tools:layout="@layout/picture_detail_fragment"/>
 </navigation>

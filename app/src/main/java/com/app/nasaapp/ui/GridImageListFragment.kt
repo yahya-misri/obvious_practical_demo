@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.app.nasaapp.MainActivity
+import com.app.nasaapp.R
 import com.app.nasaapp.adapter.GridAdapter
 import com.app.nasaapp.databinding.FragmentGridImageListBinding
 import com.app.nasaapp.interfaces.adapterCallback
@@ -68,7 +72,11 @@ class GridImageListFragment : Fragment(), adapterCallback {
         viewModel = ViewModelProvider(this, pictureViewModelFactory)[PictureViewModel::class.java]
     }
 
-    override fun itemClicked(view: ImageView, position: Int) {
+    override fun itemClicked(view: ImageView , arrayList: ArrayList<PictureModel>, position: Int) {
+        val bundle = Bundle()
+        bundle.putSerializable("pictureModel" , arrayList)
+        bundle.putInt("position" ,position)
 
+        (requireActivity()as MainActivity).navController?.navigate(R.id.action_startFragment_to_picturePagerFragment , bundle)
     }
 }

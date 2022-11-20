@@ -84,7 +84,7 @@ class GridAdapter(
 
 
         rowMainGridLayoutBinding.cardView.setOnClickListener {
-            itemCallback.itemClicked(rowMainGridLayoutBinding.image, position)
+            itemCallback.itemClicked(rowMainGridLayoutBinding.image, allPictures ,position)
 
         }
 

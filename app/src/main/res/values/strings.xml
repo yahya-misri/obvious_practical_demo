@@ -3,4 +3,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nase_image_list">Nasa Image List</string>
+    <string name="copyright">Copyright: %s</string>
 </resources>
