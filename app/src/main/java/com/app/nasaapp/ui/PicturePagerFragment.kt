@@ -44,7 +44,7 @@ class PicturePagerFragment :Fragment() {
 //        parentFragmentManager.beginTransaction().replace(R.id.rootContainer, PictureDetailFragment.newInstance(allData[0]))
 //            .commit()
         binding.viewpager.adapter = adapter
-        
+
         binding.viewpager.currentItem = position
 
 
