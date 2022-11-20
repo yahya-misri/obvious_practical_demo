@@ -39,15 +39,13 @@ class PicturePagerFragment :Fragment() {
         allData = arguments?.getSerializable("pictureModel") as ArrayList<PictureModel>
         position = arguments?.getInt("position",0)!!
 
-        val adapter = PicturePagerAdapter(parentFragmentManager, lifecycle,allData)
+        val adapter = PicturePagerAdapter(this,allData,position)
 
 //        parentFragmentManager.beginTransaction().replace(R.id.rootContainer, PictureDetailFragment.newInstance(allData[0]))
 //            .commit()
-        binding.viewpager.orientation = ViewPager2.ORIENTATION_HORIZONTAL;
         binding.viewpager.adapter = adapter
-
-
-//        binding.viewpager.currentItem = position
+        
+        binding.viewpager.currentItem = position
 
 
     }

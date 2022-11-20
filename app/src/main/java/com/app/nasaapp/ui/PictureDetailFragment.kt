@@ -52,30 +52,8 @@ class PictureDetailFragment: Fragment()  {
 
         setData()
 
-//        setTouchListener()
-
-
     }
 
-    private fun setTouchListener() {
-        pictureDetailFragmentBinding.llMainLayout.setOnTouchListener(object: OnSwipeTouchListener(requireContext()) {
-            override fun onSwipeLeft() {
-                pictureDetailFragmentBinding.llMainLayout.startAnimation(AnimationUtils.loadAnimation(requireContext(),R.anim.left_to_right))
-//                if (position >= 0){
-//                    position -= 1
-//                    setData()
-//                }
-
-            }
-            override fun onSwipeRight() {
-                pictureDetailFragmentBinding.llMainLayout.startAnimation(AnimationUtils.loadAnimation(requireContext(),R.anim.right_to_left))
-//                if (position < allData.size) {
-//                    position += 1
-//                    setData()
-//                }
-            }
-        })
-    }
 
     private fun setData() {
 
